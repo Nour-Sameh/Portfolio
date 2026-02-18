@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nour Sameh | Software Engineer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --primary-purple: #8b5cf6;
+            --dark-purple: #2e1065;
+            --accent-purple: #d8b4fe;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0f0715;
+            color: #ffffff;
+            scroll-behavior: smooth;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 24px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #c084fc 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-image-container {
+            position: relative;
+            width: 340px;
+            height: 340px;
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            padding: 8px;
+            background: linear-gradient(135deg, var(--primary-purple), #c084fc);
+            box-shadow: 0 0 50px rgba(139, 92, 246, 0.3);
+            animation: morph 8s ease-in-out infinite;
+            overflow: hidden;
+        }
+
+        @keyframes morph {
+            0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+            50% { border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%; }
+            100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+        }
+
+        .hero-image-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: inherit;
+            overflow: hidden;
+            border: 4px solid #0f0715;
+            background: #1a1025;
+        }
+
+        .hero-image-inner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            transition: transform 0.5s ease;
+        }
+
+        .hero-image-container:hover img {
+            transform: scale(1.1);
+        }
+
+        .nav-link {
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background: var(--primary-purple);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        section {
+            padding: 100px 20px;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-purple);
+            background: rgba(139, 92, 246, 0.05);
+        }
+
+        .badge {
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            padding: 4px 12px;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            color: #d8b4fe;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f0715; }
+        ::-webkit-scrollbar-thumb { background: var(--dark-purple); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--primary-purple); }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center glass px-8 py-3">
+            <div class="text-2xl font-bold gradient-text tracking-tighter cursor-pointer">NS</div>
+            <div class="hidden md:flex gap-8 text-sm font-medium">
+                <a href="#home" class="nav-link text-white/70 hover:text-white">Home</a>
+                <a href="#about" class="nav-link text-white/70 hover:text-white">About</a>
+                <a href="#experience" class="nav-link text-white/70 hover:text-white">Experience</a>
+                <a href="#skills" class="nav-link text-white/70 hover:text-white">Skills</a>
+                <a href="#services" class="nav-link text-white/70 hover:text-white">Services</a>
+            </div>
+            <a href="mailto:nono5noor4@gmail.com" class="bg-[#8b5cf6] hover:bg-[#7c3aed] text-white px-6 py-2 rounded-full transition-all text-sm font-semibold shadow-lg shadow-purple-500/20">Let's Talk</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center relative overflow-hidden pt-20">
+        <!-- Animated Background Orbs -->
+        <div class="absolute w-[600px] h-[600px] bg-purple-600/20 rounded-full blur-[120px] -top-40 -left-40 animate-pulse"></div>
+        <div class="absolute w-[400px] h-[400px] bg-blue-600/10 rounded-full blur-[100px] bottom-0 right-0"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 w-full z-10">
+            <div class="flex flex-col md:flex-row items-center gap-16 md:gap-24">
+                
+                <!-- Left Side: Content -->
+                <div class="text-left flex-1 order-2 md:order-1">
+                    <div class="mb-6">
+                        <span class="badge mb-4">
+                            <span class="relative flex h-2 w-2">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                            </span>
+                            Available for new projects
+                        </span>
+                        <h2 class="text-gray-400 font-medium tracking-widest mb-2 uppercase text-sm">Welcome to my world</h2>
+                        <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-[1.1] tracking-tight">
+                            Hello, I'm <br> 
+                            <span class="gradient-text"> Nour Sameh</span>
+                        </h1>
+                        <p class="text-gray-400 text-lg md:text-xl mb-10 max-w-xl leading-relaxed">
+                            A Computer Science student at Ain Shams University Focused on Full-Stack Development and Software Engineering. Crafting scalable web applications with .NET and modern technologies
+                    </div>
+
+                    <div class="flex flex-wrap gap-5 items-center">
+                        <a href="#experience" class="bg-white text-black px-8 py-4 rounded-2xl font-bold hover:bg-purple-100 transition-all flex items-center gap-3 shadow-xl">
+                            <i data-lucide="external-link" class="w-5 h-5"></i> My Work
+                        </a>
+                        <div class="flex gap-4">
+                            <a href="https://github.com/Nour-Sameh" target="_blank" class="glass p-4 hover:text-purple-400 transition-colors rounded-2xl border-white/10 hover:border-purple-500/50">
+                                <i data-lucide="github" class="w-6 h-6"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/nour-sameh-b600142b3/" target="_blank" class="glass p-4 hover:text-purple-400 transition-colors rounded-2xl border-white/10 hover:border-purple-500/50">
+                                <i data-lucide="linkedin" class="w-6 h-6"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Stats / Quick Info -->
+                    <!-- <div class="grid grid-cols-2 md:grid-cols-3 gap-8 mt-16 pt-8 border-t border-white/5">
+                        <div>
+                            <p class="text-3xl font-bold gradient-text">3.3</p>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest mt-1">GPA (B)</p>
+                        </div>
+                        <div>
+                            <p class="text-3xl font-bold text-white">Junior</p>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest mt-1">CS Student</p>
+                        </div>
+                        <div class="hidden md:block">
+                            <p class="text-3xl font-bold text-white">DEPI</p>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest mt-1">Internship</p>
+                        </div>
+                    </div> -->
+                </div>
+
+                <!-- Right Side: Morphing Image -->
+                <div class="flex-shrink-0 order-1 md:order-2 floating">
+                    <div class="hero-image-container">
+                        <div class="hero-image-inner">
+                            <!-- Placeholder for your image - Use the same filename you provided -->
+                            <img src="mee.png" alt="Nour Sameh" onerror="this.src='https://ui-avatars.com/api/?name=Nour+Sameh&background=8b5cf6&color=fff&size=512'">
+                        </div>
+                    </div>
+                    
+                    <!-- Floating Badge for Tech -->
+                    <div class="absolute -bottom-6 -left-6 glass p-4 rounded-2xl border-purple-500/30 animate-bounce" style="animation-duration: 4s;">
+                        <div class="flex items-center gap-3">
+                            <div class="bg-purple-500/20 p-2 rounded-lg">
+                                <i data-lucide="code-2" class="w-5 h-5 text-purple-400"></i>
+                            </div>
+                            <div>
+                                <p class="text-[10px] text-gray-400 uppercase font-bold tracking-tighter leading-none">Specializing in</p>
+                                <p class="text-sm font-bold">.NET & C#</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div class="glass p-8 md:p-12 relative group border-white/10 hover:border-purple-500/20 transition-all">
+                <div class="absolute -top-6 -left-6 bg-purple-600 w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg group-hover:rotate-12 transition-transform shadow-purple-500/30">
+                    <i data-lucide="user" class="text-white w-6 h-6"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-6">Professional Profile</h3>
+                <p class="text-gray-300 leading-relaxed text-base mb-8">
+                    I am a third-year Computer Science student at <span class="text-white font-semibold">Ain Shams University</span>. My journey is fueled by a passion for solving complex problems through code. Whether it's crafting robust backends with <span class="text-purple-400">ASP.NET Core</span>, analyzing data patterns, or securing networks, I thrive on continuous learning and technical excellence.
+                </p>
+                <div class="flex gap-4">
+                    <div class="p-4 rounded-xl bg-white/5 border border-white/10 flex-1">
+                        <h4 class="text-purple-400 font-bold text-lg leading-none">Full Stack</h4>
+                        <p class="text-[10px] text-gray-500 uppercase tracking-widest mt-1">Primary Focus</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-white/5 border border-white/10 flex-1 text-center">
+                        <h4 class="text-white font-bold text-lg leading-none">ECPC</h4>
+                        <p class="text-[10px] text-gray-500 uppercase tracking-widest mt-1">Competitor</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="space-y-8">
+                <div class="flex items-start gap-5 group">
+                    <div class="bg-purple-900/30 p-4 rounded-2xl group-hover:bg-purple-600 transition-all"><i data-lucide="layers" class="text-purple-400 group-hover:text-white w-6 h-6"></i></div>
+                    <div>
+                        <h4 class="font-bold text-xl mb-1">Architecture & Clean Code</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed">Applying Object-Oriented Programming (OOP) principles and design patterns to create maintainable systems.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-5 group">
+                    <div class="bg-purple-900/30 p-3.5 rounded-xl group-hover:bg-purple-600 transition-colors"><i data-lucide="globe" class="text-purple-400 group-hover:text-white w-5 h-5"></i></div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-1">Web Development</h4>
+                        <p class="text-sm text-gray-400">Building responsive front-ends and high-performance back-ends using ASP.NET Core.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-5 group">
+                    <div class="bg-purple-900/30 p-3.5 rounded-xl group-hover:bg-purple-600 transition-colors"><i data-lucide="cpu" class="text-purple-400 group-hover:text-white w-5 h-5"></i></div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-1">Problem Solving</h4>
+                        <p class="text-sm text-gray-400">Analytical thinking polished through ECPC and competitive programming challenges.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="bg-[#160a22]/30 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-extrabold mb-4">Journey So Far</h2>
+                <p class="text-gray-400">Education, internships, and competitive achievements</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto space-y-6">
+                <!-- DEPI Training -->
+                <div class="glass p-8 border-l-4 border-l-purple-500 relative overflow-hidden group hover:bg-white/[0.05] transition-all">
+                    <div class="flex flex-col md:flex-row justify-between mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold group-hover:text-purple-400 transition-colors">Full Stack .Net Intern</h3>
+                            <p class="text-purple-400 font-medium">Digital Egypt Pioneers Initiative (DEPI)</p>
+                        </div>
+                        <span class="text-xs bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full h-fit mt-2 md:mt-0 font-bold">Nov 2024 — Present</span>
+                    </div>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Intensive training in C#, ASP.NET Core, and Entity Framework. Building enterprise-level APIs and responsive web interfaces following the latest industry standards.
+                    </p>
+                </div>
+
+                <!-- GDG Bootcamps -->
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="glass p-8 border-l-4 border-l-blue-500 hover:bg-white/[0.05] transition-all">
+                        <h3 class="text-xl font-bold mb-1">Data Science Participant</h3>
+                        <p class="text-blue-400 text-sm mb-4">GDG on Campus • Jan 2025</p>
+                        <p class="text-xs text-gray-500 leading-relaxed">Analyzed datasets using Python/Pandas and visualized insights via Power BI to support data-driven decisions.</p>
+                    </div>
+                    <div class="glass p-8 border-l-4 border-l-green-500 hover:bg-white/[0.05] transition-all">
+                        <h3 class="text-xl font-bold mb-1">Cybersecurity Bootcamp</h3>
+                        <p class="text-green-400 text-sm mb-4">GDG on Campus • Jan 2025</p>
+                        <p class="text-xs text-gray-500 leading-relaxed">Hands-on experience in ethical hacking and network security using Kali Linux, Wireshark, and Metasploit.</p>
+                    </div>
+                </div>
+
+                <!-- ECPC -->
+                <div class="glass p-8 border-l-4 border-l-pink-500 group">
+                    <div class="flex flex-col md:flex-row justify-between mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold">ECPC Participant</h3>
+                            <p class="text-pink-400 font-medium text-sm">Egyptian Collegiate Programming Contest</p>
+                        </div>
+                        <span class="text-xs text-gray-500 font-bold mt-2 md:mt-0">July 2024</span>
+                    </div>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Solved complex algorithmic problems under time constraints using efficient data structures 
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="max-w-7xl mx-auto px-6">
+        <h2 class="text-4xl font-extrabold mb-16 text-center">Technical <span class="gradient-text">Toolkit</span></h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Languages -->
+            <div class="glass p-8 skill-card transition-all border-b-2 border-b-purple-500 group">
+                <div class="w-12 h-12 bg-purple-600/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-purple-600 transition-all">
+                    <i data-lucide="code" class="text-purple-400 group-hover:text-white w-6 h-6"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-6">Languages</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg text-xs hover:bg-white/10 transition-colors">C++</span>
+                    <span class="bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg text-xs hover:bg-white/10 transition-colors">C# (.NET)</span>
+                    <span class="bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg text-xs hover:bg-white/10 transition-colors">Python</span>
+                    <span class="bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg text-xs hover:bg-white/10 transition-colors">SQL</span>
+                    <span class="bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg text-xs hover:bg-white/10 transition-colors">HTML/CSS</span>
+                    <span class="bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg text-xs hover:bg-white/10 transition-colors">JavaScript</span>
+                    <span class="bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg text-xs hover:bg-white/10 transition-colors">Java</span>
+                </div>
+            </div>
+
+            <!-- Web & Backend -->
+            <div class="glass p-8 skill-card transition-all border-b-2 border-b-blue-500 group">
+                <div class="w-12 h-12 bg-blue-600/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-all">
+                    <i data-lucide="server" class="text-blue-400 group-hover:text-white w-6 h-6"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-6">Web & Backend</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg text-xs hover:bg-white/10 transition-colors">ASP.NET Core</span>
+                    <span class="bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg text-xs hover:bg-white/10 transition-colors">Entity Framework</span>
+                    <span class="bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg text-xs hover:bg-white/10 transition-colors">Web API</span>
+                    <span class="bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg text-xs hover:bg-white/10 transition-colors">OOP</span>
+                    <span class="bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg text-xs hover:bg-white/10 transition-colors">Node JS</span>
+
+                </div>
+            </div>
+
+            <!-- Tools & Design -->
+            <div class="glass p-8 skill-card transition-all border-b-2 border-b-green-500 group">
+                <div class="w-12 h-12 bg-green-600/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-green-600 transition-all">
+                    <i data-lucide="wrench" class="text-green-400 group-hover:text-white w-6 h-6"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-6">Tools & Design</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg text-xs hover:bg-white/10 transition-colors">Git / GitHub</span>
+                    <span class="bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg text-xs hover:bg-white/10 transition-colors">Photoshop</span>
+                    <span class="bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg text-xs hover:bg-white/10 transition-colors">Canva</span>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-extrabold mb-4">What I Do</h2>
+            <p class="text-gray-400 text-lg">Turning ideas into functional digital solutions</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="glass p-8 text-center group hover:bg-purple-600/10 transition-all border-b-4 border-b-transparent hover:border-b-purple-600">
+                <i data-lucide="laptop" class="w-12 h-12 mx-auto mb-6 text-purple-400 group-hover:scale-110 transition-transform"></i>
+                <h4 class="font-bold text-xl mb-3">Full-Stack Web Dev</h4>
+                <p class="text-sm text-gray-500 leading-relaxed">Developing robust web applications from scratch using .NET and modern frontend frameworks.</p>
+            </div>
+            <div class="glass p-8 text-center group hover:bg-purple-600/10 transition-all border-b-4 border-b-transparent hover:border-b-purple-600">
+                <i data-lucide="terminal" class="w-12 h-12 mx-auto mb-6 text-purple-400 group-hover:scale-110 transition-transform"></i>
+                <h4 class="font-bold text-xl mb-3">Backend & API Design</h4>
+                <p class="text-sm text-gray-500 leading-relaxed">Designing scalable RESTful APIs and secure server-side logic for mobile and web apps.</p>
+            </div>
+            <div class="glass p-8 text-center group hover:bg-purple-600/10 transition-all border-b-4 border-b-transparent hover:border-b-purple-600">
+                <i data-lucide="brush" class="w-12 h-12 mx-auto mb-6 text-purple-400 group-hover:scale-110 transition-transform"></i>
+                <h4 class="font-bold text-xl mb-3">Visual Content Design</h4>
+                <p class="text-sm text-gray-500 leading-relaxed">Creating professional marketing materials, banners, and UI assets using Adobe Photoshop.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="glass border-t border-white/5 py-16 px-6 text-center mt-20 rounded-none rounded-t-[40px]">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-10">
+                <h2 class="text-4xl font-extrabold gradient-text mb-4">Get in Touch</h2>
+                <p class="text-gray-400">Currently open to freelance opportunities and internships.</p>
+            </div>
+            
+            <div class="flex justify-center gap-6 mb-12">
+                <a href="https://github.com/Nour-Sameh" class="text-gray-400 hover:text-white transition-colors bg-white/5 p-4 rounded-full"><i data-lucide="github"></i></a>
+                <a href="https://www.linkedin.com/in/nour-sameh-b600142b3/" class="text-gray-400 hover:text-white transition-colors bg-white/5 p-4 rounded-full"><i data-lucide="linkedin"></i></a>
+                <a href="mailto:nono5noor4@gmail.com" class="text-gray-400 hover:text-white transition-colors bg-white/5 p-4 rounded-full"><i data-lucide="mail"></i></a>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/5 gap-4">
+                <p class="text-sm text-gray-600">© 2025 Nour Sameh. All rights reserved.</p>
+                <div class="flex gap-8 text-xs text-gray-500 uppercase tracking-widest">
+                    <span>Cairo, Egypt</span>
+                    <span>Ain Shams University</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        
+        // Handling Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                if (targetId.startsWith('#')) {
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        const headerOffset = 100;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Simple Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav div');
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(15, 7, 21, 0.8)';
+                nav.style.padding = '10px 32px';
+            } else {
+                nav.style.background = 'rgba(255, 255, 255, 0.03)';
+                nav.style.padding = '12px 32px';
+            }
+        });
+    </script>
+</body>
+</html>
